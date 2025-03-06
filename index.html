@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rack Location Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Set Locations on Racks</h2>
+        <form id="rackForm">
+            <label for="rack">Rack number</label>
+            <input type="text" id="rack">
+            
+            <label for="column">Rack column</label>
+            <input type="text" id="column">
+            
+            <label for="level">Rack level</label>
+            <input type="text" id="level">
+            
+            <label for="locations">Number of locations in a slot</label>
+            <input type="number" id="locations">
+            
+            <label><input type="checkbox" id="picking" onchange="togglePicking()"> Picking Storage</label>
+            
+            <div id="pickingContainer" style="display: none;">
+                <label for="pickingLocations">How many picking locations?</label>
+                <input type="number" id="pickingLocations">
+            </div>
+            
+            <button type="button" onclick="generateCodes()">Generate Code</button>
+            <button type="button" onclick="exportToCSV()">Download CSV</button>
+        </form>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>Rack</th>
+                <th>Column</th>
+                <th>Level</th>
+                <th>Slot</th>
+                <th>Code Location</th>
+            </tr>
+        </thead>
+        <tbody id="resultTable"></tbody>
+    </table>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
